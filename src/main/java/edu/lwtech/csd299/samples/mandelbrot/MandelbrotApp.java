@@ -104,6 +104,7 @@ public class MandelbrotApp {
     
     private static void savePic() {
         String tempDir = System.getProperty("java.io.tmpdir");
+        if (!tempDir.endsWith("/")) tempDir += "/";
         
         String filename = tempDir + "pic" + numRedraws + ".jpg";
         System.out.println("Saving " + filename);        
@@ -112,6 +113,7 @@ public class MandelbrotApp {
     
     private static void loadPic() {
         String tempDir = System.getProperty("java.io.tmpdir");
+        if (!tempDir.endsWith("/")) tempDir += "/";
         StdDraw.picture(0.5, 0.5, tempDir + "pic" + numRedraws + ".jpg");
     }
 
